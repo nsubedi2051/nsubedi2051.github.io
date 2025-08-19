@@ -3,31 +3,79 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name | Portfolio</title>
-  <style>
-    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    body { margin:0; background:#0f172a; color:#e2e8f0; }
-    .wrap { max-width:760px; margin:12vh auto; padding:0 24px; }
-    h1 { font-size:clamp(32px,6vw,56px); margin:0 0 8px; line-height:1.05; }
-    h2 { margin:6px 0 24px; font-weight:500; color:#94a3b8; }
-    .btns { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
-    .btn { padding:12px 18px; border-radius:14px; border:1px solid #334155; text-decoration:none; color:#e2e8f0; }
-    .btn:hover { background:#1e293b; }
-    footer { margin-top:56px; color:#94a3b8; font-size:14px; }
-  </style>
+  <title>Nishant Subedi | Portfolio</title>
+  <meta name="description" content="Nishant Subedi — Digital transformation & accessibility • Aspiring software developer" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="wrap">
-    <h1>Your Name</h1>
-    <h2>Digital transformation • Accessibility • UX</h2>
-    <p>I build simple, inclusive solutions. Currently learning Python & web dev.</p>
-    <div class="btns">
-      <a class="btn" href="https://github.com/your-username" target="_blank">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank">LinkedIn</a>
-      <a class="btn" href="mailto:you@example.com">Email</a>
-      <a class="btn" href="tel:+61XXXXXXXXX">Call</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Nishant Subedi</span>
+      </a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <footer>© 2025 Your Name. Hosted on GitHub Pages.</footer>
+  </header>
+
+  <main id="content" class="container">
+    <!-- HERO -->
+    <section class="hero appear">
+      <div class="avatar">
+        <!-- If assets/profile.jpg exists it will show; otherwise a gradient circle placeholder is shown via CSS -->
+        <img src="assets/profile.jpg" alt="Portrait of Nishant Subedi" onerror="this.classList.add('placeholder')" />
+      </div>
+      <h1 class="title">Nishant Subedi</h1>
+      <p class="subtitle">Digital transformation & accessibility • Aspiring software developer</p>
+
+      <ul class="chips" aria-label="Interests">
+        <li>Python</li>
+        <li>Web Development</li>
+        <li>Automation</li>
+        <li>Accessibility</li>
+        <li>UX</li>
+      </ul>
+
+      <div class="cta">
+        <a class="btn" href="https://github.com/nsubedi2051" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+        <button class="btn" id="copyEmailBtn" data-email="your@email.com" type="button" aria-live="polite">Copy Email</button>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="card appear">
+      <h2>About me</h2>
+      <p>
+        I’m learning Python and modern web development while working on inclusive, simple digital solutions.
+        I enjoy building small tools that make customer experiences clearer and more accessible.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card appear">
+      <h2>Contact</h2>
+      <ul class="links">
+        <li><a href="https://github.com/nsubedi2051" target="_blank" rel="noopener">github.com/nsubedi2051</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">linkedin.com/in/your-handle</a></li>
+        <li><a id="emailLink" href="mailto:your@email.com">your@email.com</a></li>
+      </ul>
+      <p class="hint">Tip: click “Copy Email” above to copy my email to your clipboard.</p>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © <span id="year"></span> Nishant Subedi — Hosted on GitHub Pages.
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true">Copied!</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
